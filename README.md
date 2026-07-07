@@ -2,7 +2,7 @@
 
 ```bash
 curl -s -o .agents/rules-cli.sh https://raw.githubusercontent.com/Qua-9-9-1/AI-rules-getter/main/rules-cli.sh && chmod +x .agents/rules-cli.sh
-curl -s -o .agents/rules-cli.sh https://raw.githubusercontent.com/Qua-9-9-1/AI-rules-getter/main/README.md
+curl -s -o .agents/prompt.txt https://raw.githubusercontent.com/Qua-9-9-1/AI-rules-getter/main/README.md
 ```
 
 ## Prompt to agent :
