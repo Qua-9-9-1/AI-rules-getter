@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REPO_USER="TonPseudoGitHub"
-REPO_NAME="config-agents"
+REPO_USER="Qua-9-9-1"
+REPO_NAME="My-AI-rules"
 BRANCH="main"
 BASE_URL="https://raw.githubusercontent.com/$REPO_USER/$REPO_NAME/$BRANCH/registry"
 
