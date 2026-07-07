@@ -7,7 +7,7 @@ BRANCH="main"
 
 BASE_URL="https://raw.githubusercontent.com/$REPO_USER/$REPO_NAME/$BRANCH/registry"
 
-AI_DIR=".ai"
+AI_DIR=".agents"
 TARGET_FILE="$AI_DIR/rules.md"
 AGENTS_FILE="$AI_DIR/agents.md"
 CONTEXT_DIR="$AI_DIR/context"
