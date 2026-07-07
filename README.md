@@ -8,6 +8,10 @@ curl -s -o .agents/prompt.md https://raw.githubusercontent.com/Qua-9-9-1/AI-rule
 ## Prompt to agent :
 
 ```
+Role: You act as a Software Architect and Context Manager for this project. Your goal is to analyze the current codebase and standardize the architecture documentation within the .agents/ folder.
+
+Execution Instructions Step-by-Step:
+
 Step 1: Current State Analysis
 Scan the entire project to identify the exact technology stack (languages, frameworks, infrastructure tools) as well as the macro-architecture used.
 
@@ -25,14 +29,20 @@ Empty its textual content.
 
 Move the project-specific information by creating thematic sub-files in .agents/context/ (e.g., business-context.md, tech-stack.md, objectives.md).
 
-Step 4: Global Registry Update (Reusable Rules)
-For each technology identified in Step 1, check if a corresponding Markdown file already exists in the .agents/registry/ subfolders (core/, languages/, frameworks/, infrastructure/, architectures/).
+Step 4: Global Registry Retrieval & Update
+For each technology identified in Step 1, follow this exact resolution order to populate the .agents/registry/ subfolders (core/, languages/, frameworks/, infrastructure/, architectures/):
 
-If the file already exists: Do not modify it under any circumstances.
+Condition A (File exists locally): If the file is already present in .agents/registry/, do not modify it under any circumstances.
 
-If the file does not exist: Create this file. Write the industrial coding best practices (cleanliness, readability, maintainability) specific to this technology, and save it in the subfolder corresponding to its category.
+Condition B (File missing locally):
+
+Execute the CLI tool to fetch the rule from the global registry by running: ./.agents/rules-cli.sh <technology_name> (e.g., ./.agents/rules-cli.sh react or ./.agents/rules-cli.sh rust).
+
+If the script succeeds (file downloaded): The rule is now local. Do not modify the downloaded file.
+
+If the script returns an error (file not found on remote registry): You must act as the fallback. Create this file yourself. Write the industrial coding best practices (cleanliness, readability, maintainability) specific to this technology, and save it in the subfolder corresponding to its category.
 
 Step 5: Entry Point Transformation (AGENTS.md)
 Write the new content for .agents/AGENTS.md to make it the main router for the project. It must act exclusively as an index.
-List all files generated or identified in the previous steps strictly using relative Markdown links (e.g., [Business Context](./context/business-context.md) or [React Rules](./registry/frameworks/react.md)).
+List all files generated, downloaded, or identified in the previous steps strictly using relative Markdown links (e.g., [Business Context](./context/business-context.md) or [React Rules](./registry/frameworks/react.md)).
 ```
