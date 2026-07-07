@@ -30,7 +30,7 @@ Empty its textual content.
 Move the project-specific information by creating thematic sub-files in .agents/context/ (e.g., business-context.md, tech-stack.md, objectives.md).
 
 Step 4: Global Registry Retrieval & Update
-For each technology identified in Step 1, follow this exact resolution order to populate the .agents/registry/ subfolders (core/, languages/, frameworks/, infrastructure/, architectures/):
+For each technology identified in Step 1, follow this exact resolution order to populate the .agents/registry/ subfolders (core/, languages/, frameworks/, infrastructure/, architectures/, libraries/, tooling/, formats/, api/):
 
 Condition A (File exists locally): If the file is already present in .agents/registry/, do not modify it under any circumstances.
 
@@ -40,7 +40,7 @@ Execute the CLI tool to fetch the rule from the global registry by running: ./.a
 
 If the script succeeds (file downloaded): The rule is now local. Do not modify the downloaded file.
 
-If the script returns an error (file not found on remote registry): You must act as the fallback. Create this file yourself. Write the industrial coding best practices (cleanliness, readability, maintainability) specific to this technology, and save it in the subfolder corresponding to its category.
+If the script returns an error (file not found on remote registry): You must act as the fallback. Create this file yourself. Write the industrial coding best practices (cleanliness, readability, maintainability) specific to this technology, and save it strictly in the subfolder corresponding to its correct logical category.
 
 Step 5: Entry Point Transformation (AGENTS.md)
 Write the new content for .agents/AGENTS.md to make it the main router for the project. It must act exclusively as an index.
